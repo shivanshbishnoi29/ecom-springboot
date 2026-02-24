@@ -1,6 +1,8 @@
 package com.example.Ecom.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +15,6 @@ public class State {
 
     @ManyToOne
     @JoinColumn(name = "countryId")
-    @JsonBackReference
+    @JsonIgnoreProperties("states")
     public  Country country;
 }
