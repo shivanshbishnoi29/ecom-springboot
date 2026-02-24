@@ -1,5 +1,6 @@
 package com.example.Ecom.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,5 +17,6 @@ public class Country {
     public  String name;
 
     @OneToMany(mappedBy = "country")
+    @JsonIgnoreProperties("country")
     public List<State> states;
 }
